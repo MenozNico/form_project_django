@@ -1,0 +1,21 @@
+{% extends "form_app/base.html" %}
+
+{% block content_page %}
+<div class="container">
+    {% if form %}
+    <h1>Compila il form:</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Invia">
+
+
+    </form>
+    {% endif %}
+
+    {{ message }}
+</div>
+
+
+{% endblock content_page %}
+
